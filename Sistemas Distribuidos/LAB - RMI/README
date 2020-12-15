@@ -1,0 +1,37 @@
+
+Questão 1
+Para executar:
+-Definir o IP do servidor na classe BotServer(na maquina servidor) e BotCliente(na maquina cliente)
+-Criar stub usando terminal:
+	terminal> cd MyChatBot/bin
+	terminal> rmic ImplementBot
+	terminal> rmiregistry
+ 
+-Executar a classe BotServer no servidor
+-Executar a classe BotClient no cliente
+
+Durante a execução:
+Inserir as perguntas:
+- Ola
+- Qual seu nome?
+- Qual sua idade?
+- Quem é seu criador?
+- Quem é o presidente dos EUA?
+- Quem é presidente do Brasil?
+- Quem matou Kennedy?
+- Capital do Amazonas?
+- P = NP?
+- Do que é feito o universo?
+
+Caso não exista resposta, o chatbot da opção de inserir resposta para pergunta em seu banco de conhecimento.
+
+Questão 2
+Para executar:
+-Definir o IP do servidor na classe Server(na maquina servidor) e Cliente(na maquina cliente)
+-Criar stub usando terminal:
+	terminal> cd E-Sindico/bin
+	terminal> rmic Caixa
+	terminal> rmiregistry 
+
+
+

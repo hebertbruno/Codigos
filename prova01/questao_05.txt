@@ -1,0 +1,61 @@
+commit a2a4e981ee0302633ca2d088c8ab72e9c9e12a56
+Author: icomp <icomp@icomp-pc>
+Date:   Wed Dec 14 18:02:46 2016 -0400
+
+    Prova 1 PW
+
+commit 5a7231fb54e473503100572e2a4ed0f8e1aadba4
+Author: icomp <icomp@icomp-pc>
+Date:   Wed Dec 14 16:37:55 2016 -0400
+
+    Questao 2
+
+commit d7d95cf08c3e1b8892465f1a47bb9b5c87824798
+Author: icomp <icomp@icomp-pc>
+Date:   Wed Dec 14 16:22:16 2016 -0400
+
+    1ª prova parcial de Prog. Web 2016/2- Questão 1
+
+commit f3990183674eb340b27a26c05181c71e79e0609f
+Author: Matheus Oliveira <mco@icomp.ufam.edu.br>
+Date:   Wed Dec 7 18:13:30 2016 -0400
+
+    Exercicio 2 de Javascript
+
+commit 72bb7e372514a8d09429af5a6ea243b416c5692f
+Author: Wesley Monteiro <Wesley Monteiro>
+Date:   Tue Dec 6 03:00:37 2016 -0200
+
+    Exercicio 3 de CSS
+
+commit 895051215afe72f1302d14176e5ccc7ea08deda9
+Author: Wesley Monteiro <Wesley Monteiro>
+Date:   Tue Dec 6 02:16:02 2016 -0200
+
+    all
+
+commit 4f07c3e84dc556309cdd8d7ce56c6b56af5eac6f
+Author: icomp <icomp@icomp-pc>
+Date:   Mon Nov 28 17:51:26 2016 -0400
+
+    Exercicios de JavaScript
+
+commit d633151ec45cc4e6fe5979da3830442dbc0605a0
+Author: Clawbert <clawbertpereira@gmail.com>
+Date:   Wed Nov 23 17:38:38 2016 -0400
+
+    Exercicios
+
+commit 21240236b9bb356d01a7ec5f41a50b4ac6ba1f0f
+Author: wesleymc <wmc@icomp.ufam.edu.br>
+Date:   Mon Nov 7 19:25:26 2016 -0200
+
+    Initial commit
+
+
+
+
+a) working directory tem a ver com o diretório local onde está armazenado o projeto. Index é a área de preparação do arquivo modificado, ou seja, é um snapshot do arquivo no momento, é aonde ele guarda também no histórico de modificações. Já o repository é onde o arquivo após ser alterado é consolidado (commit) para que depois possa ser enviado ao servidor.
+
+Nota: 1.5
+Logs reportados corretamente, e conceitos com alguns erros.

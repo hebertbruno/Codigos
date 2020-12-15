@@ -1,0 +1,32 @@
+commit b51177b896888680be44729fbb72d691c8a2db10
+Author: Thiago Lopes Costa <tlc2@icomp.ufam.edu.br>
+Date:   Wed Dec 14 18:02:26 2016 -0400
+
+    questao 4
+
+commit 40bcbb8380a3cfa79f1f88f86f799994de2a658b
+Author: Thiago Lopes Costa <tlc2@icomp.ufam.edu.br>
+Date:   Wed Dec 14 18:02:12 2016 -0400
+
+    questao 3
+
+commit a054f5ea2dff8c0832b3840d2b74a28ff6ee5d00
+Author: Thiago Lopes Costa <tlc2@icomp.ufam.edu.br>
+Date:   Wed Dec 14 16:38:09 2016 -0400
+
+    questao 2
+
+commit 780c6d2e153148451a7ef0ae5589824f425b89d0
+Author: Thiago Lopes Costa <tlc2@icomp.ufam.edu.br>
+Date:   Wed Dec 14 16:23:50 2016 -0400
+
+    questao 1
+
+
+
+Working directory: diretorio onde estão sendo feitos os trabalhos. Um diretorio no computador 
+index: local temporário onde os arquivos ficarão até serem enviados ao repositório local. 
+Repository: repositorio local onde os arquivos já estão prontos para serem enviados.
+
+Nota:1.2
+Logs reportados corretamente, mas as definições apresentam vários problemas.

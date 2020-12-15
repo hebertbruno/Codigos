@@ -1,0 +1,271 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Snake: jogo da cobra</title>
+	
+	<style>
+	canvas {
+		display: block;
+		position: absolute;
+		border: 1px solid #000;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+	</style>
+</head>
+<body>
+<script>
+var
+COLUNA = 26,
+LINHA = 26,
+VAZIO = 0,
+SNAKE = 1,
+FRUTA = 2,
+LEFT  = 0,
+UP    = 1,
+RIGHT = 2,
+DOWN  = 3,
+KEY_LEFT  = 37,
+KEY_UP    = 38,
+KEY_RIGHT = 39,
+KEY_DOWN  = 40,
+
+canvas,	  
+ctx,	  
+keystate, /* Objeto, usado p/ entrada de teclado */
+frames,   /* numero, usado p/ anuimacao */
+pontuacao;	 
+
+/**
+ *	Define os limites do espaço do jogo 
+ */
+ grid = {
+	width: null,  /* numero de colunas */
+	height: null, /* numero de linhas */
+	_grid: null,  /* Array<any>, representacao dos dados */
+	/**
+	 *  d valor padrao a ser preenchido com:
+	 *  c numero de colunas
+	 *  r numero de linhas
+	 */
+	init: function(d, c, r) {
+		this.width = c;
+		this.height = r;
+		this._grid = [];
+		for (var x=0; x < c; x++) {
+			this._grid.push([]);
+			for (var y=0; y < r; y++) {
+				this._grid[x].push(d);
+			}
+		}
+	},
+	/**
+	 * definir valor da celula em (x, y)
+	 */
+	set: function(val, x, y) {
+		this._grid[x][y] = val;
+	},
+	/**
+	 * pegar o valor da celula em (x, y)
+	 */
+	get: function(x, y) {
+		return this._grid[x][y];
+	}
+}
+/**
+ * A cobra trabalha com estrutura de fila
+ *	cada vez que cresce um elemento entra nessa fila
+ */
+snake = {
+	direcao: null, 
+	last: null,		 /* ponteiro p/ ultimo elemento da fila */
+	_fila: null,	 /* Array<number>, representacao da fila*/
+	/**
+	 * Limpa fila e define posicao inicial e direcao
+	 * 
+	 *	d inicia direcao
+	 *	x inicia coordenada-X 
+	 *	y inicia coordenada-Y
+	 */
+	init: function(d, x, y) {
+		this.direcao = d;
+		this._fila = [];
+		this.insert(x, y);
+	},
+	/**
+	 * Adds elemento a fila
+	 */
+	insert: function(x, y) {
+		this._fila.unshift({x:x, y:y});
+		this.last = this._fila[0];
+	},
+	/**
+	 * Removes todos e coloca um elemnto na fila
+	 */
+	remove: function() {
+		return this._fila.pop();
+	}
+};
+/**
+ * Cria a fruta em qualquer lugar do espaço do jogo
+ */
+function setFood() {
+	var vazio = [];
+	// encontrar todas as celulas vazias
+	for (var x=0; x < grid.width; x++) {
+		for (var y=0; y < grid.height; y++) {
+			if (grid.get(x, y) === VAZIO) {
+				vazio.push({x:x, y:y});
+			}
+		}
+	}
+	// Escolher aleatoriamente uma das celulas vazias
+	var randpos = vazio[Math.round(Math.random()*(vazio.length - 1))];
+	grid.set(FRUTA, randpos.x, randpos.y);
+}
+/**
+ * Inicia o jogo
+ */
+function main() {
+	// Cria e inicializa a tela
+	canvas = document.createElement("canvas");
+	canvas.width = COLUNA*20;
+	canvas.height = LINHA*20;
+	ctx = canvas.getContext("2d");
+	document.body.appendChild(canvas);
+	ctx.font = "15px Arial";
+	frames = 0;
+	keystate = {};
+	// controla a entrada do teclado
+	document.addEventListener("keydown", function(evt) {
+		keystate[evt.keyCode] = true;
+	});
+	document.addEventListener("keyup", function(evt) {
+		delete keystate[evt.keyCode];
+	});
+	// inicializa o jogo e o loop
+	init();
+	loop();
+}
+/**
+ * reseta todo o jogo 
+ */
+function init() {
+	pontuacao = 0;
+	grid.init(VAZIO, COLUNA, LINHA);
+	var sp = {x:Math.floor(COLUNA/2), y:LINHA-1};
+	snake.init(UP, sp.x, sp.y);
+	grid.set(SNAKE, sp.x, sp.y);
+	setFood();
+}
+/**
+ * Loop usado para atualizacoes no jogo
+ */
+function loop() {
+	update();
+	draw();
+	window.requestAnimationFrame(loop, canvas);
+}
+/**
+ * Atualizacoes do jogo 
+ *	mudancas na tela; funcao que controla movimento da cobra.
+ */
+function update() {
+	frames++;
+	// Mudando a direção da cobra de acordo com a tecla pressionada
+	if (keystate[KEY_LEFT] && snake.direcao !== RIGHT) {
+		snake.direcao = LEFT;
+	}
+	if (keystate[KEY_UP] && snake.direcao !== DOWN) {
+		snake.direcao = UP;
+	}
+	if (keystate[KEY_RIGHT] && snake.direcao !== LEFT) {
+		snake.direcao = RIGHT;
+	}
+	if (keystate[KEY_DOWN] && snake.direcao !== UP) {
+		snake.direcao = DOWN;
+	}
+	// A cada X quadros atualiza o jogo; 
+	//	Determina velocidade da cobra.
+	if (frames%5 === 0) {
+		// Retira o ultimo elemento da fila que representa a cobra 
+		// A cabeca, no caso
+		var nx = snake.last.x;
+		var ny = snake.last.y;
+			// Atualiza a direcao dependendo da direçao da cobra
+		switch (snake.direcao) {
+			case LEFT:
+				nx--;
+				break;
+			case UP:
+				ny--;
+				break;
+			case RIGHT:
+				nx++;
+				break;
+			case DOWN:
+				ny++;
+				break;
+		}
+			// checar as condiçoes de fim de jogo
+		if (0 > nx || nx > grid.width-1  ||
+			0 > ny || ny > grid.height-1 ||
+			grid.get(nx, ny) === SNAKE
+		) {
+			return init();
+		}
+			// Verificar se a nova posicao esta sobre a fruta
+		if (grid.get(nx, ny) === FRUTA) {
+			// Incrementa
+			pontuacao++;
+			setFood();
+		} else {
+			/* retira o primeiro item da fila da cobra
+			*	ou seja, a cauda e muda o id da celula
+			*/
+			var tail = snake.remove();
+			grid.set(VAZIO, tail.x, tail.y);
+		}
+		// add id que identifica a cobra na posicao e add na fila da cobra
+		grid.set(SNAKE, nx, ny);
+		snake.insert(nx, ny);
+	}
+}
+/**
+ * Funcao para definir o preenchimento(visual) da tela.
+ *	Definir o que e a cobra, fruta e espaco vazio
+ */
+ function draw() {
+	var tw = canvas.width/grid.width;
+	var th = canvas.height/grid.height;
+	// desenhar pela tela
+	for (var x=0; x < grid.width; x++) {
+		for (var y=0; y < grid.height; y++) {
+			// define o tipo de preenchimento dependendo do id
+			switch (grid.get(x, y)) {
+				case VAZIO:
+					ctx.fillStyle = "#0000FF";
+					break;
+				case SNAKE:
+					ctx.fillStyle = "#FFFF00";
+					break;
+				case FRUTA:
+					ctx.fillStyle = "#f00";
+					break;
+			}
+			ctx.fillRect(x*tw, y*th, tw, th);
+		}
+	}
+	// Altera novamente o estilo do preenchimento
+	ctx.fillStyle = "#FF0000";
+	ctx.fillText("pontuacao: " + pontuacao, 10, canvas.height-5);
+}
+main();
+</script>
+</body>
+</html>

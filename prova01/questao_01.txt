@@ -1,0 +1,10 @@
+// Primeiro erro sintático está na linha 02. O HTML não aceita comentários usando o simbolo "/* */", para isso deve-se usar "<!-- -->".
+
+// Segundo erro está na falta da tag <html></html> na estrutura do documento. Onde a mesma se encontraria abaixo do <!DOCTYPE html>, envolvendo todo o corpo do documento.
+
+// O terceiro erro está na linha 10, onde falta o fechamento </strong> na tag <strong>.
+
+// O quarto erro está na linha 05. Falta o fechamento </meta> da tag <meta>.  
+
+Nota: 1.5
+O quarto erro não existe.

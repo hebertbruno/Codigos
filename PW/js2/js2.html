@@ -1,0 +1,36 @@
+<!--Programação Web
+	Aluno: Bruno Hebert
+	Matricula: 21200462 -->
+
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+	   <meta charset="utf-8">
+     <title>JS2</title>
+			</head>
+
+	<body>
+    <div id="div_id">
+
+    	  <form id="formulario_id" name="myForm">
+  				  <label>Informe o Raio:    </label><input class="raio" type="text" name="raio" value="" style="text-align: center"></input>
+  				  <input class="buttun" type="button" name="myButtun" value="ok"></input><br>
+  				  <label>Área do Círculo:</label><input class="area" type="text" name="area_circulo" value="" style="text-align: center"></input><br>
+  				  <label>Circunferência:</label><input class="circulo" type="text" name="circunferencia" value="" style="text-align: center"></input><br>
+  				
+		    </form>
+	  </div>
+
+		<script>
+			botao = document.myForm.myButtun;
+			botao.onclick = function () {
+				raio = document.myForm.raio.value;
+				document.myForm.area_circulo.value = (Math.PI*raio*raio).toFixed(2);
+				document.myForm.circunferencia.value = (2*Math.PI*raio).toFixed(2);
+			}
+		</script>
+
+	</body>
+</html>

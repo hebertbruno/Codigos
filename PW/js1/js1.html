@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<style>
+			table, th, td {
+				border: 1px solid black;
+			}
+			table {
+				float: left;
+				margin-left: 10px;
+				margin-bottom: 10px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			for(var i = 1; i < 11; i++){
+				document.writeln("<table>");
+				document.writeln("<tr><th colspan='2'>Produtos de "+i+"</th></tr>");
+				for(var j = 1; j < 11; j++){
+					document.writeln("<tr><td align='center'>"+i+"x"+j+"</td><td align='center'>"+i*j+"</td></tr>");
+				}
+				document.writeln("</table>");
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+</html>

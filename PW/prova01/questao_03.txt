@@ -1,0 +1,5 @@
+
+Hoisting são funçoes ou variaveis enxergadas em todo escopo.
+
+Nota: 0.5
+Descrição incompleta. Código não elaborado.

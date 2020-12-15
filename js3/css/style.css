@@ -1,0 +1,17 @@
+p{
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 0.5em;
+}
+input{
+    display: inline-block;
+    width: 5em;
+}
+
+button{
+    display: block;
+}
+
+
+
+

@@ -1,0 +1,9 @@
+
+1 forma -> utilizando o atributo class e pesquisando pelo nome da class. No exemplo dado o nome da classe é "cl1"
+
+2 forma -> utilizando id para o span, onde esse id deve ser único.
+
+3 forma -> através do nome/titulo do elemento. Selecionando o title="css". Este nome tambem deve ser unico para o elemento span
+
+Nota:0.0
+Seletores incorretos.

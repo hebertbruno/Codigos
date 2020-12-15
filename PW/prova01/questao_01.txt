@@ -1,0 +1,11 @@
+Erros encontrados:
+
+Linha 2: Comentarios com /* */ não sao aceitos em html
+
+Linha 5: O "meta charset" está sendo definido após o título. A especificação dos caracteres deve ser aplicada antes da definiçao de conteudos visuais da pagina.
+
+Linha 8: Não foi definida a escala do tamanho da imagem "width = 260" "height = 111"
+
+Linha 10: A tag <strong> não está sendo fechada, assim todo o conteudo após ela sofrerá as alteraçoes. 
+Nota: 1.0
+As linhas 5 e 8 estão corretas.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/novo_user"
+        android:title="Adicionar Funcionario"/>
+    <item
+        android:id="@+id/novo_produto"
+        android:title="Adicionar Produto"/>
+
+    <item
+        android:id="@+id/sair"
+        android:title="Sair"/>
+
+</menu>

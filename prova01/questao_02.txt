@@ -1,0 +1,11 @@
+// Existem 3 formas para selecionar o elemento span:
+
+1) Utilizando o atributo class, onde o mesmo referencia o elemento como uma classe, utilizando o .cl1 para acessar o elemento.
+
+2) Utilizando o atributo id, onde o nome do mesmo deverá ser único em todo o arquivo. O atributo é acessado utilizando-se o #cl1.
+
+3) A terceira forma é por nome, utilizando-se o atributo name=cl1 a referenciada tag span pode ser acessada usando o valor do name.
+
+Nota:0.0
+A página em questão possui dois elementos com a classe cl1, o elemento span não possui id, e nem atributo name.
+

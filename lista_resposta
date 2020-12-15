@@ -1,0 +1,68 @@
+ 1 - A tipagem do PHP é dinâmica, isto é, o tipo de
+	uma variável pode mudar ao longo do script
+EX: $variavel = "ICOMP"
+	$variavel = 256
+	$variavel = TRUE
+	$variavel = 123
+
+2 - O PHP é um ambiente de desenvolvimento para servidores, ou seja, o código PHP é executado somente no servidor. O Javascript, por outro lado é executado nas máquinas clientes (nos navegadores Web). Dessa forma, o PHP é a linguagem utilizada para executar um serviço, enquanto o Javascript é uma linguagem que dá interatividade a páginas Web.
+
+3 - Várias variáveis pré-definidas no PHP são "superglobais", que significa que elas estão disponível em todos escopos para todo o script
+
+4 - 
+
+5 - Camada Cliente: interface, browser
+	Camada de processamento: recebe e processa as requisiçoes do usuario
+	Camada de Banco de dados: contem os dados necessarios para atender as requisiçoes do usuario
+
+6 - O protocolo HTTP não mantém um estado/conexão. Toda a interação que o seu cliente fizer com um servidor Web acarretará em uma nova
+	 requisição e resposta.
+
+	As requisições são independentes e possuem um tempo de vida (conexão, envio de mensagem, resposta, encerramento da conexão). O servidor Web não é capaz de identificar se duas requisições vieram de um mesmo navegador, e o mesmo não faz nenhum gerenciamento em memória para que mensagens sejam compartilhadas entre requisições.
+
+7 - Cookies
+	Através de cookies o servidor Web é capaz de trocar informações de estado com o navegador do usuário. Desse modo, somos capazes de adicionar produtos a um carrinho de compras, sem perder estas informações ao mudar de página, sair do website ou até mesmo fechar o navegador.
+	Tecnicamente falando, um cookie é uma pequena quantidade de informação persistida temporariamente pelo navegador. Os navegadores normalmente limitam o tamanho dos cookies em até 4KB, e apagam cookies com a data de “validade vencida”
+	
+
+	Sessões
+	As sessões têm um princípio similar aos cookies, só que o armazenamento do estado é feito pelo servidor Web, e não pelo navegador.
+	Por exemplo, quando construímos uma aplicação que necessita de autenticação, no momento em que o usuário efetuar o login, podemos até permitir que algumas informações sejam armazenadas em um cookie, mas dados mais “sensíveis”, como usuário e e-mail, são mais interessantes de serem guardadas em sessões. Isto, pois não é seguro que esse tipo de informação fique “viajando” pela Web.
+
+
+
+9 - SELECT * user WHERE id = 1
+
+10 - A medida que o código-fonte do PHP cresce e o número de classes, funções e bibliotecas cresce junto fica cada vez mais fácil de 		acontecer uma “colisão de nomes” que é quando duas classes/funções/variáveis/constantes têm o mesmo nome. Isso acarretará 			inúmeros erros ao seu sistema.
+
+11 - Um framework é um conjunto de bibliotecas que visam facilitar o desenvolvimento de sistemas completos
+	Desenvolver uma aplicação do zero é inviável e muito trabalhoso em muitos casos
+	Reusabilidade de código torna tudo mais fácil, rápido, confiável, e possivelmente mais seguro
+
+12 -	MVC não foi criado para ser somente um padrão de projeto, ele na verdade é uma arquitetura de projeto onde seu objetivo é 		separar 	seu código em três camadas fazendo com que cada área só trabalhe com itens que competem à elas. Trocando em 			miúdos, cada um só faz o que foi desenvolvido para fazer.
+	Com o MVC você facilmente transforma seu código de modo à ficar muito mais legível.
+	Para utilizá-lo você tem que ter em mente que haverá uma separação em seu código, as regras de negócio ficarão separadas da lógica e da interface do usuário.
+
+	M de Model
+	O model, ou modelo, no padrão MVC serve para armazenar e persistir os dados. O que seria isso? Toda comunicação com o banco de dados. Os comandos crud (inserir, alterar, remover, buscar) serão feitas pelas classes deste tipo.
+	É utilizado para armazenar informações,trabalhando como um espelho da tabela do banco de dados. Como trabalhamos com objetos, os dados serão persistidos como objetos.
+
+	V de View
+	O view, ou visão, no padrão MVC servirá APENAS para exibir as informações enviadas pelo controller, aqui não existirá nenhuma lógica ou regra de negócio, apenas a interface do usuário.
+
+	C de Controller
+	O controle faz exatamente o que o nome diz: controla. Ele é o responsável por fazer o intermédio entre o modelo e a visão.
+	É o responsável também por toda lógica do sistema. Retornando somente os itens necessários para a comunicação entre o modelo e a visão. Entre o usuário e a aplicação.
+
+14 - Widgets: são blocos de códigos reusáveis que são usados nas views para criar elementos de interface mais complexos
+	Ex: tabelas pra formatar o visual da pagina, criando um padrao.
+
+	Helpers: O Yii 2 provê um vasto conjunto de Helpers, que são classes que ajudam a simplificar tarefas de programação comuns
+	Algumas tarefas facilitadas por helpers: manipulação de strings e arrays, geração de formulários, inserção de links e imagens, etc
+
+15 - Mapeamento objeto-relacional (ou ORM) é uma técnica de desenvolvimento utilizada para reduzir a impedância da programação
+	 orientada aos objetos utilizando bancos de dados relacionais. As tabelas do banco de dados são representadas através de classes e os registros de cada tabela são representados como instâncias das classes correspondentes.
+
+	Um ORM possui diversos métodos básicos que irão realizar a interação entre a aplicação e o banco de dados, se responsabilizando por algumas tarefas básicas, como o CRUD (Create, Read, Update e Delete), por exemplo. Além disso, o ORM irá gerenciar os detalhes de mapeamento de um conjunto de objetos para um banco de dados.
+
+	O ORM reduz ao mínimo a necessidade de escrever códigos de conexão e queries SQL. Dessa forma, é possível obter uma redução significativa nos códigos da aplicação, gerando um código mais elegante e consequentemente ampliando a facilidade de posteriores manutenções na aplicação.

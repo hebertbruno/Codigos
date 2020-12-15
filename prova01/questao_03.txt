@@ -1,0 +1,12 @@
+// Hoisting tem a ver com funções ou variáveis que são enxergadas em todo o escopo, afetando a reutilização de variáveis ou funções.
+
+
+um exemplo de hoisting:
+
+for(var i=0; i<5; i++){
+	console.log(i); // Aqui ele imprimiria 0,1,2,3,4
+}
+console.log(i); // Já aqui, como a variável i foge do escopo de for ela acaba sendo enxergada por esse console, imprimindo o valor 5
+
+Nota: 0.8
+O código não contém um exemplo de hoisting, e a explicação está parcialmente correta.

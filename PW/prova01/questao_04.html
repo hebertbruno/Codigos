@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Nota:0.6. Código HTML com vários erros, e os estilos não estão funcionando. -->
+
+<html>
+<head>
+	<charset = "utf-8">
+	<title></title>
+<script type="text/javascript">
+	var n = Math.floor((Math.random() * 10)+1);
+	console.log(n);
+	var mult;
+	document.write("<table><thead><tr colspan = '2'<td> Produto de "+n+"</td> </tr> </thead> </table>");
+		
+	for (var i = 1; i < 11; i++) {
+		mult = i*n;
+		document.write("<table><tbody><tr><td> "+i+" X "+n+" </td> <td> " +mult+ "</td> </tr> </tbody> </table>");	
+	}
+</script>
+
+
+<td>
+<style type="text/css">
+
+	thead{
+		background-color: lightgray;
+		border-width:  2px solid black;
+		border-left: 2px solid black;
+		border-right: 2px solid black;
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+		text-align: center;
+		}
+
+	tbody, td, tr{
+		border-width:  2px solid black;
+		border-left: 2px solid black;
+		border-right: 2px solid black;
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+		text-align: center;
+	}
+</style>
+
+</head>
+	
+<body>
+	
+
+</body>
+</html>
